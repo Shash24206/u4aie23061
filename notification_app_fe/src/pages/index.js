@@ -16,8 +16,8 @@ export default function Home() {
     const loadDashboard = async () => {
       await Log('frontend', 'info', 'page', 'Dashboard page mounted');
       try {
-        const { notifications } = await fetchNotifications({ limit: 50 }); // Fetch more to sort client-side
-        const sorted = sortNotifications(notifications).slice(0, 5); // Top 5
+        const { notifications } = await fetchNotifications({ limit: 50 });
+        const sorted = sortNotifications(notifications).slice(0, 5);
         setTopNotifications(sorted);
         await Log('frontend', 'info', 'state', 'Dashboard notifications updated');
       } catch (e) {

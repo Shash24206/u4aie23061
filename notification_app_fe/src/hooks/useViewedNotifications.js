@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Log } from '../../../logging_middleware/src/index.js';
 
-/**
- * Hook to manage viewed notification IDs in localStorage.
- */
 export const useViewedNotifications = () => {
   const [viewedIds, setViewedIds] = useState([]);
 

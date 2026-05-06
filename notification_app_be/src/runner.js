@@ -7,13 +7,10 @@ const runStage1 = async () => {
     await Log("backend", "info", "config", "Stage 1 Application Started");
     console.log("--- Notification Prioritization System (Stage 1) ---");
 
-    // 1. Fetch
     const rawNotifications = await fetchNotificationsFromAPI();
 
-    // 2. Process
-    const topNotifications = await processNotifications(rawNotifications, 5); // Limit to top 5 for display
+    const topNotifications = await processNotifications(rawNotifications, 5);
 
-    // 3. Display
     console.log("\n--- Top Prioritized Notifications ---");
     if (topNotifications.length === 0) {
       console.log("No notifications to display.");
@@ -33,5 +30,4 @@ const runStage1 = async () => {
   }
 };
 
-// Execute
 runStage1();

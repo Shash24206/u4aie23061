@@ -3,15 +3,17 @@ import { Log } from "../../../logging_middleware/src/index.js";
 
 const NOTIFICATION_API_URL = "http://20.207.122.201/evaluation-service/notifications";
 
-/**
- * Fetches notifications from the external evaluation API.
- * @returns {Promise<Array>}
- */
 export const fetchNotificationsFromAPI = async () => {
   try {
     await Log("backend", "info", "api", "Initiating notification fetch from external API");
     
-    const response = await axios.get(NOTIFICATION_API_URL, { timeout: 5000 });
+    const response = await axios.get(NOTIFICATION_API_URL, { 
+      timeout: 5000,
+      headers: {
+        "student-id": "AM.SC.U4AIE23061",
+        "student-name": "U.Shashank"
+      }
+    });
     
     if (!response.data || !Array.isArray(response.data)) {
       await Log("backend", "error", "api", "Invalid response format from notification API");

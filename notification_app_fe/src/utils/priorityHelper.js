@@ -4,11 +4,6 @@ const PRIORITY_WEIGHTS = {
   event: 1,
 };
 
-/**
- * Sorts notifications by priority weight and then by timestamp.
- * @param {Array} notifications 
- * @returns {Array}
- */
 export const sortNotifications = (notifications) => {
   if (!notifications) return [];
   

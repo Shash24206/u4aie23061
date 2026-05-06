@@ -9,15 +9,12 @@ export const VALID_LEVELS = [
 ];
 
 export const VALID_PACKAGES = [
-  // frontend
   "api",
   "component",
   "hook",
   "page",
   "state",
   "style",
-
-  // common
   "auth",
   "config",
   "middleware",

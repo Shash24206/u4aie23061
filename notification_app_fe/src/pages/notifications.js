@@ -42,7 +42,7 @@ export default function NotificationsPage() {
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
-    setPage(1); // Reset to first page on filter change
+    setPage(1);
   };
 
   return (
